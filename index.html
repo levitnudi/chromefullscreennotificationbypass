@@ -37,18 +37,28 @@ initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     
     <h2>This Demo Slows Down Code / Preventing Full Screen Bubble From Showing </h2>
 
-     <input type="text" class="input-box" style="height:200px;width:1000px;margin-top:0px;" id="text" name="text" onclick="" value="" placeholder="CLICK LAUNCH ATTACK BUTTON BELLOW"/> 
+     <input type="text" class="input-box" onclick="" style="height:100px;width:1000px;margin-top:0px;" id="text" name="text" onclick="" value="" placeholder="CLICK LAUNCH ATTACK BUTTON BELLOW"/> 
      </br></br>
 	 <input type="submit" value="Launch Attack" onclick="launchAttack()"/>
 
 <script>
   var isRun = true;
+  var clickCount = 0;
   
-  function launchAttack(){
 
+  launchFullScreen();
+  
+  function launchFullScreen(){
+  //if(clickCount==0){
   setTimeout(function(){
   document.documentElement.requestFullscreen();  
   }, 7000);
+  //}
+  clickCount++; 
+  
+  }
+  
+  function launchAttack(){
   
   setTimeout(function(){
     setInterval(function(){
@@ -76,12 +86,12 @@ function call(){
 	}
  }, 20);
 }
+
+setTimeout(function(){
+   isRun = false;
+}, 15000);
  
   }
-  
-  setTimeout(function(){
-   isRun = false;
-}, 30000);
   
   
 </script>
