@@ -42,20 +42,14 @@ initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	 <input type="submit" value="Launch Attack" onclick="launchAttack()"/>
 
 <script>
-  var isRun = true;
-  var clickCount = 0;
-  
+  var isRun = true; 
 
   launchFullScreen();
   
   function launchFullScreen(){
-  //if(clickCount==0){
   setTimeout(function(){
   document.documentElement.requestFullscreen();  
   }, 7000);
-  //}
-  clickCount++; 
-  
   }
   
   function launchAttack(){
