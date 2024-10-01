@@ -48,6 +48,10 @@ initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
   function launchAttack(){
 
+setTimeout(function(){
+   isRun = false;
+}, 30000);
+
   setTimeout(function(){
   document.documentElement.requestFullscreen();  
   }, 7000);
@@ -76,11 +80,6 @@ function call(){
 	}
  }, 20);
 }
-  
-  
-  setTimeout(function(){
-   isRun = false;
-  }, 30000);
   }
   
 </script>
